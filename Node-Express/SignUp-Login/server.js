@@ -2,7 +2,7 @@ const express  = require("express");
 const app = express();
 
 
-app.get((req,res)=>{
+app.get('/',(req,res)=>{
     res.send("<h1>hello your server is on </h1>")
     res.end();
 })
