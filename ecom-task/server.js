@@ -2,6 +2,7 @@ const express = require('express');
 const path  = require('path');
 const bodyParser = require('body-parser')
 const session = require("express-session");
+const productData = require('./products.json')
 
 const {v4:uuidv4}=require("uuid")
 // const router = require('./router')
@@ -27,7 +28,7 @@ app.use(session({
 
 // home route
 app.get('/',(req,res)=>{
-   res.render('ecomHomePage',{title:"Ecom Site"})
+   res.render('ecomHomePage',{title:"Ecom Site"},{jsonData: productData})
 })
 
 app.listen(5000,()=>{
